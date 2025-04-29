@@ -107,18 +107,14 @@ async function genereOrganigramme(table) {
     })
     .nodeContent(function (d, i, arr, state) {
       const color = colorVignette;
-      const imageDiffVert = 25 + 2;
 
       return `
-        <div style='width:${d.width}px;height:${d.height}px;padding-top:${imageDiffVert - 2}px;padding-left:1px;padding-right:1px'>
-          <div style="font-family: 'Inter', sans-serif;background-color:${color}; margin-left:-1px;width:${d.width - 2}px;height:${d.height - imageDiffVert}px;border-radius:10px;border: 1px solid #E4E2E9">
-            <div style="padding: 10px;">
-              <div style="font-size:15px;color:#08011E;">${d.data[chpNom]}</div>
-              <div style="color:#716E7B;font-size:10px;">${(d.data[chpFonction] || "") + "<br>" + (d.data[chpDirection] || "")}</div>
-            </div>
-            <div style="background-color:${color};margin-top:${-imageDiffVert - 20}px;margin-left:${15}px;border-radius:100px;width:50px;height:50px;" ></div>
-            <div style="margin-top:${-imageDiffVert - 20}px;">
-              <img src="${d.data[chpImage] && d.data[chpImage][0] ? getImage(d.data[chpImage][0]) : ''}" style="margin-left:${20}px;border-radius:100px;width:40px;height:40px;" />
+        <div style='width:${d.width}px;height:${d.height}px;padding:10px;'>
+          <div style="font-family: 'Inter', sans-serif;background-color:${color};width:${d.width - 20}px;height:${d.height - 20}px;border-radius:10px;border: 1px solid #E4E2E9;padding: 10px;">
+            <div style="font-size:15px;color:#08011E;">${d.data[chpNom]}</div>
+            <div style="color:#716E7B;font-size:10px;">${(d.data[chpFonction] || "") + "<br>" + (d.data[chpDirection] || "")}</div>
+            <div style="margin-top:10px;">
+              <img src="${d.data[chpImage] && d.data[chpImage][0] ? getImage(d.data[chpImage][0]) : ''}" style="border-radius:100px;width:40px;height:40px;" />
             </div>
           </div>
         </div>
