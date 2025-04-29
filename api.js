@@ -113,9 +113,6 @@ async function genereOrganigramme(table) {
           <div style="font-family: 'Inter', sans-serif;background-color:${color};width:${d.width - 20}px;height:${d.height - 20}px;border-radius:10px;border: 1px solid #E4E2E9;padding: 10px;">
             <div style="font-size:15px;color:#08011E;">${d.data[chpNom]}</div>
             <div style="color:#716E7B;font-size:10px;">${(d.data[chpFonction] || "") + "<br>" + (d.data[chpDirection] || "")}</div>
-            <div style="margin-top:10px;">
-              <img src="${d.data[chpImage] && d.data[chpImage][0] ? getImage(d.data[chpImage][0]) : ''}" style="border-radius:100px;width:40px;height:40px;" />
-            </div>
           </div>
         </div>
       `;
